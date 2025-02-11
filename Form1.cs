@@ -9,7 +9,7 @@ namespace Calculator5
         private TextBox txtB;
         private TextBox txtKetQua;
         private Button btnCong;
-        
+        private Button btnTru;
 
         public Form1()
         {
@@ -34,7 +34,8 @@ namespace Calculator5
             btnCong = new Button() { Text = "Cộng" };
             btnCong.Click += btnCong_Click;
 
-            
+            btnTru = new Button() { Text = "Trừ" };
+            btnTru.Click += btnTru_Click;
 
             this.Controls.Add(lblA);
             this.Controls.Add(txtA);
@@ -43,7 +44,7 @@ namespace Calculator5
             this.Controls.Add(lblKetQua);
             this.Controls.Add(txtKetQua);
             this.Controls.Add(btnCong);
-            
+            this.Controls.Add(btnTru);
         }
 
         private void btnCong_Click(object sender, EventArgs e)
@@ -54,7 +55,13 @@ namespace Calculator5
             txtKetQua.Text = c.ToString();
         }
 
-        
+        private void btnTru_Click(object sender, EventArgs e)
+        {
+            double a = double.Parse(txtA.Text);
+            double b = double.Parse(txtB.Text);
+            double c = a - b;
+            txtKetQua.Text = c.ToString();
+        }
 
 
     }
